@@ -1,4 +1,4 @@
-$ docker run -d --name bassam devopsdockeruh/exec_bash_exercise sleep 15
+$ docker run -d --name bassam devopsdockeruh/exec_bash_exercise 
 $ docker container ls
 $ docker exec bassam tail ./logs.txt
 $ docker rm --force bassam
