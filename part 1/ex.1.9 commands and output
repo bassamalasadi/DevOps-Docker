@@ -1,0 +1,4 @@
+$ docker run -d -p 2342:80 devopsdockeruh/ports_exercise
+
+=======================
+On localhost:2342 output is "Ports configured correctly!!"
