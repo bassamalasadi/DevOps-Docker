@@ -1,0 +1,9 @@
+$ vim dockerfile
+$ docker build -t bassam_exec .
+$ docker run -p 8000:8000 -v$(pwd)/logs.txt:/app/server/logs.txt bassam_exec
+  > backend-example-docker@1.0.0 start /app
+  > cross-env NODE_ENV=production node index.js
+
+  Browserslist: caniuse-lite is outdated. Please run next command `npm update caniuse-lite browserslist`
+  Started on port 8000
+
