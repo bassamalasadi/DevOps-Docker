@@ -1,0 +1,37 @@
+fontend dockerfile : Edit
+--------------------------------
+FROM ubuntu:16.04
+
+ENV API_URL=http://localhost:8000
+
+WORKDIR /app
+
+RUN apt-get update && apt-get -y \
+    install curl git && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash && \
+    apt-get install -y nodejs && \
+    git clone https://github.com/docker-hy/frontend-example-docker.git . && \
+    npm install
+
+EXPOSE 5000
+CMD npm start
+
+================================
+
+backend dockerfile : Edit
+--------------------------------
+FROM ubuntu:16.04
+
+ENV FRONT_URL=http://localhost:5000
+
+WORKDIR /app
+
+RUN apt-get update && apt-get -y \
+    install curl git && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash && \
+    apt-get install -y nodejs && \
+    git clone https://github.com/docker-hy/backend-example-docker.git . && \
+    npm install
+
+EXPOSE 8000
+CMD npm start
